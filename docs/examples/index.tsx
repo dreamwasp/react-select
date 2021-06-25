@@ -30,6 +30,7 @@ export { default as CustomOption } from './CustomOption';
 export { default as CustomMultiValueLabel } from './CustomMultiValueLabel';
 export { default as CustomMultiValueRemove } from './CustomMultiValueRemove';
 export { default as CustomInput } from './CustomInput';
+export { default as CustomDummyInput } from './CustomDummyInput';
 export { default as CustomGroupHeading } from './CustomGroupHeading';
 export { default as CustomPlaceholder } from './CustomPlaceholder';
 export { default as CustomSelectContainer } from './CustomSelectContainer';

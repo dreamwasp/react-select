@@ -2,12 +2,15 @@
 import { Ref } from 'react';
 import { jsx } from '@emotion/react';
 
+export type DummyInputProps = JSX.IntrinsicElements['input'] & {
+  /** Reference to the internal element */
+  readonly innerRef: Ref<HTMLInputElement>;
+}
+
 export default function DummyInput({
   innerRef,
   ...props
-}: JSX.IntrinsicElements['input'] & {
-  readonly innerRef: Ref<HTMLInputElement>;
-}) {
+}: DummyInputProps) {
   return (
     <input
       ref={innerRef}

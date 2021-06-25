@@ -11,7 +11,7 @@ export type SelectInstance<
   Option extends OptionBase = OptionBase,
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>
-> = Select<Option, IsMulti, Group>;
+  > = Select<Option, IsMulti, Group>;
 export type { StateManagerProps as Props } from './useStateManager';
 
 export type {
@@ -28,6 +28,7 @@ export type {
   LoadingIndicatorProps,
 } from './components/indicators';
 export type { InputProps } from './components/Input';
+export type { DummyInputProps } from './components/DummyInput';
 export type { MenuListProps, MenuProps, NoticeProps } from './components/Menu';
 export type {
   MultiValueGenericProps,

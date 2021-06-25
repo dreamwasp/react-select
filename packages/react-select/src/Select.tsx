@@ -12,7 +12,7 @@ import { MenuPlacer } from './components/Menu';
 import LiveRegion from './components/LiveRegion';
 
 import { createFilter, FilterOptionOption } from './filters';
-import { DummyInput, ScrollManager } from './internal/index';
+import { ScrollManager } from './internal/index';
 import {
   AriaLive,
   AriaLiveMessages,
@@ -1492,7 +1492,7 @@ export default class Select<
   renderInput() {
     const { isDisabled, isSearchable, inputId, inputValue, tabIndex, form } =
       this.props;
-    const { Input } = this.getComponents();
+    const { Input, DummyInput } = this.getComponents();
     const { inputIsHidden } = this.state;
     const { commonProps } = this;
 

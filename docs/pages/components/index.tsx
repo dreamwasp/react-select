@@ -17,6 +17,7 @@ import {
   CustomMultiValueLabel,
   CustomControl,
   CustomGroup,
+  CustomDummyInput,
   CustomInput,
   CustomOption,
   CustomMenu,
@@ -339,6 +340,19 @@ export default function Components() {
           </ExampleWrapper>
         )}
 
+        ### DummyInput
+
+        Lorem ipsum
+
+        ${(
+          <ExampleWrapper
+            label="Custom Input Example"
+            urlPath="docs/examples/CustomInput.tsx"
+            raw={require('!!raw-loader!../../examples/CustomDummyInput.tsx')}
+          >
+            <CustomDummyInput />
+          </ExampleWrapper>
+        )}
         ### LoadingIndicator
 
         Loading indicator to be displayed in the Indicators Container when \`isLoading\`

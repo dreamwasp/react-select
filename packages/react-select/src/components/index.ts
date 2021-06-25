@@ -25,6 +25,8 @@ import {
 import Control, { ControlProps } from './Control';
 import Group, { GroupHeading, GroupHeadingProps, GroupProps } from './Group';
 import Input, { InputProps } from './Input';
+import DummyInput, { DummyInputProps } from './DummyInput';
+
 import Menu, {
   LoadingMessage,
   MenuList,
@@ -52,7 +54,7 @@ export interface SelectComponents<
   Option extends OptionBase,
   IsMulti extends boolean,
   Group extends GroupBase<Option>
-> {
+  > {
   ClearIndicator: ComponentType<ClearIndicatorProps<Option, IsMulti, Group>>;
   Control: ComponentType<ControlProps<Option, IsMulti, Group>>;
   DropdownIndicator: ComponentType<
@@ -69,6 +71,7 @@ export interface SelectComponents<
     IndicatorSeparatorProps<Option, IsMulti, Group>
   > | null;
   Input: ComponentType<InputProps<Option, IsMulti, Group>>;
+  DummyInput: ComponentType<DummyInputProps>;
   LoadingIndicator: ComponentType<
     LoadingIndicatorProps<Option, IsMulti, Group>
   >;
@@ -98,7 +101,7 @@ export type SelectComponentsConfig<
   Option extends OptionBase,
   IsMulti extends boolean,
   Group extends GroupBase<Option>
-> = Partial<SelectComponents<Option, IsMulti, Group>>;
+  > = Partial<SelectComponents<Option, IsMulti, Group>>;
 
 export const components = {
   ClearIndicator: ClearIndicator,
@@ -111,6 +114,7 @@ export const components = {
   IndicatorsContainer: IndicatorsContainer,
   IndicatorSeparator: IndicatorSeparator,
   Input: Input,
+  DummyInput: DummyInput,
   LoadingIndicator: LoadingIndicator,
   Menu: Menu,
   MenuList: MenuList,
@@ -134,7 +138,7 @@ interface Props<
   Option extends OptionBase,
   IsMulti extends boolean,
   Group extends GroupBase<Option>
-> {
+  > {
   components: SelectComponentsConfig<Option, IsMulti, Group>;
 }
 
@@ -145,7 +149,7 @@ export const defaultComponents = <
 >(
   props: Props<Option, IsMulti, Group>
 ): SelectComponentsGeneric =>
-  ({
-    ...components,
-    ...props.components,
-  } as SelectComponentsGeneric);
+({
+  ...components,
+  ...props.components,
+} as SelectComponentsGeneric);
